@@ -1,0 +1,32 @@
+## Server properties
+server:
+  port: 8080
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3305/customerdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa.hibernate.ddl-auto: create-drop
+  jpa.show-sql: true
+
+app-db:
+  datasource:
+    host: localhost
+    port: 3306
+    database: customerdb
+    username: root
+    password: root
+logging:
+  level:
+    root: INFO
+    io:
+      debezium:
+        mysql:
+          BinlogReader: INFO
+    com:
+      aschay:
+          debeziumDemo: DEBUG
+spring.output.ansi.enabled: ALWAYS

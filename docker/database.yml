@@ -1,0 +1,29 @@
+#version: "3.9" not neccessary anymore
+services:
+  mysql-1:
+    container_name: app-db
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # MYSQL_USER: user
+      # MYSQL_PASSWORD: root
+      MYSQL_DATABASE: customerdb
+    volumes:
+      - app-db:/var/lib/mysql
+  mysql-2:
+    container_name: cdc-db
+    image: mysql
+    ports:
+      - 3305:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # MYSQL_USER: user
+      # MYSQL_PASSWORD: root
+      MYSQL_DATABASE: customerdb
+    volumes:
+      - cdc-db:/var/lib/mysql  
+volumes:
+  app-db:
+  cdc-db:  
