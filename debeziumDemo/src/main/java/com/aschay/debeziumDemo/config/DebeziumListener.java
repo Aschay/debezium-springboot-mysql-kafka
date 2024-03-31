@@ -33,39 +33,15 @@ public class DebeziumListener {
 	private final CDCservice service;
 	private final DebeziumEngine<RecordChangeEvent<SourceRecord>> debeziumEngine;
 
-	public DebeziumListener(Configuration customerConnectorConfiguration, CDCservice service) {
-
+	public DebeziumListener(Configuration appdbConnectorConfiguration, CDCservice service) {
 		this.debeziumEngine = DebeziumEngine.create(ChangeEventFormat.of(Connect.class))
-				.using(customerConnectorConfiguration.asProperties()).notifying(this::handleChangeEvent).build();
+				                            .using(appdbConnectorConfiguration.asProperties())
+				                            .notifying(this::handleChangeEvent).build();
 
 		this.service = service;
 	}
 
 	private void handleChangeEvent(RecordChangeEvent<SourceRecord> sourceRecordRecordChangeEvent) {
-
-//		SourceRecord sourceRecord = sourceRecordRecordChangeEvent.record();
-//
-//		log.info("Key = '" + sourceRecord.key() + "' value = '" + sourceRecord.value() + "'");
-//
-//		Struct sourceRecordChangeValue = (Struct) sourceRecord.value();
-//
-//		if (sourceRecordChangeValue != null) {
-//			Operation operation = Operation.forCode((String) sourceRecordChangeValue.get(OPERATION));
-//
-//			if (operation != Operation.READ) {
-//				String record = operation == Operation.DELETE ? BEFORE : AFTER; // Handling Update & Insert operations.
-//
-//				Struct struct = (Struct) sourceRecordChangeValue.get(record);
-//				Map<String, Object> payload = struct.schema().fields().stream().map(Field::name)
-//						.filter(fieldName -> struct.get(fieldName) != null)
-//						.map(fieldName -> Pair.of(fieldName, struct.get(fieldName)))
-//						.collect(toMap(Pair::getKey, Pair::getValue));
-//
-//				this.customerService.replicateData(payload, operation);
-//				log.info("Updated Data: {} with Operation: {}", payload, operation.name());
-//			}
-//		}
-
 		SourceRecord sourceRecord = sourceRecordRecordChangeEvent.record();
 		Struct sourceRecordValue = (Struct) sourceRecord.value();
 		if (sourceRecordValue != null) {
