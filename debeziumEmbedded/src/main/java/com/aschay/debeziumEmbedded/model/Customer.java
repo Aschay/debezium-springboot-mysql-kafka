@@ -1,4 +1,4 @@
-package com.aschay.debeziumDemo.model;
+package com.aschay.debeziumEmbedded.model;
 
 import java.util.UUID;
 

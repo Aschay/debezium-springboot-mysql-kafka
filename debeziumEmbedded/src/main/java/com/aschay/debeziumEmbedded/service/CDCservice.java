@@ -1,12 +1,12 @@
-package com.aschay.debeziumDemo.service;
+package com.aschay.debeziumEmbedded.service;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.aschay.debeziumDemo.model.Customer;
-import com.aschay.debeziumDemo.repository.CDCrepository;
+import com.aschay.debeziumEmbedded.model.Customer;
+import com.aschay.debeziumEmbedded.repository.CDCrepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.debezium.data.Envelope.Operation;

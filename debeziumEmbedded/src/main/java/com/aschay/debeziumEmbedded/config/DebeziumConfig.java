@@ -1,4 +1,4 @@
-package com.aschay.debeziumDemo.config;
+package com.aschay.debeziumEmbedded.config;
 
 import java.io.File;
 import java.io.IOException;

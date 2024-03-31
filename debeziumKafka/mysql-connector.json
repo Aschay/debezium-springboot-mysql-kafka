@@ -1,0 +1,24 @@
+{
+    "config": {
+      "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+      "tasks.max": "1",
+      "database.server.id": "20183",  
+      "database.dbname": "customerdb",
+      "database.history.kafka.bootstrap.servers": "kafka:9092",
+      "database.history.kafka.topic": "database-changes",
+      "database.hostname": "mysql",
+      "database.password": "root",
+      "database.port": "3306",
+      "database.server.name": "mysql",
+      "database.user": "root",
+      "name": "app-db-connector",
+      "topic.creation.default.cleanup.policy": "delete",
+      "topic.creation.default.partitions": "1",
+      "topic.creation.default.replication.factor": "1",
+      "topic.creation.default.retention.ms": "604800000",
+      "topic.creation.enable": "true",
+      "topic.prefix": "db-cdc"
+    },
+    "name": "app-db-connector",
+    "type": "source"
+  }

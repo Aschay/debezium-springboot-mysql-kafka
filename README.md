@@ -93,6 +93,8 @@ private void handleChangeEvent(RecordChangeEvent<SourceRecord> sourceRecordRecor
 			}
 		}
 	}
-````
+```
 
-
+### debezium  with kafka connect 
+Unlike debezium embedded ,debezium with Kafka (Connect) offer more gain in the level of fault-tolerance and scalability.
+you can use bitmani(smaller container) confulentinc or redpanda images depending on your needs :

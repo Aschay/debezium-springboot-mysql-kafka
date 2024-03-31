@@ -1,13 +1,13 @@
-package com.aschay.debeziumDemo;
+package com.aschay.debeziumEmbedded;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DebeziumDemoApplication {
+public class DebeziumEmbeddedApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DebeziumDemoApplication.class, args);
+		SpringApplication.run(DebeziumEmbeddedApplication.class, args);
 	}
 
 }

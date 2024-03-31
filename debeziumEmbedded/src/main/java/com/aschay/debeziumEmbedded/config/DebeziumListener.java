@@ -1,4 +1,4 @@
-package com.aschay.debeziumDemo.config;
+package com.aschay.debeziumEmbedded.config;
 
 import io.debezium.config.Configuration;
 import io.debezium.embedded.Connect;
@@ -12,7 +12,7 @@ import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.springframework.stereotype.Component;
 
-import com.aschay.debeziumDemo.service.CDCservice;
+import com.aschay.debeziumEmbedded.service.CDCservice;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
