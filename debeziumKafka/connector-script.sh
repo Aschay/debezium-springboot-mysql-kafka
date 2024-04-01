@@ -14,3 +14,8 @@ curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" 
       "schema.history.internal.kafka.topic": "schema-changes.customer"  
     }
 }'
+curl -i -X POST localhost:8083/connectors -H 'Content-Type: application/json' -d @mysql-connector.json 
+
+curl -i -X GET localhost:8083/connectors
+
+curl -i -X DELETE localhost:8083/connectors/app-db-connector/

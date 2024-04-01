@@ -56,7 +56,7 @@ listen to our app-db (mysql database) changes (delete,update and adding operatio
 				.with("database.history", "io.debezium.relational.history.FileDatabaseHistory")
 				.with("database.history.file.filename", dbHistoryTempFile.getAbsolutePath())
 				.build();
-	}
+}
 ```
 
 ### setup debezium engine to listen to every insertion(update/add) or deletion changes with
@@ -67,7 +67,7 @@ public DebeziumListener(Configuration appdbConnectorConfiguration, CDCservice se
 				                        .notifying(this::handleChangeEvent).build();
 
 	this.service = service;
-	}
+}
 ```
 and 
 ```java
@@ -92,9 +92,14 @@ private void handleChangeEvent(RecordChangeEvent<SourceRecord> sourceRecordRecor
 			log.info("Data Changed: {} with Operation: {}", message, operation.name());
 			}
 		}
-	}
+}
 ```
 
 ### debezium  with kafka connect 
 Unlike debezium embedded ,debezium with Kafka (Connect) offer more gain in the level of fault-tolerance and scalability.
-you can use bitmani(smaller container) confulentinc or redpanda images depending on your needs :
+You can use different images of kafka :  bitmani(smaller container) ,confulentinc( easier integration for multiple technologies) or redpanda (faster)  depending on your needs .
+Also you can integrate kafdrop as ui to browser topics ,consumer groups and  monitor a cluster.
+The configuration are [here](https://github.com/Aschay/springboot-debezium/tree/main/debeziumEmbedded)
+
+
+
