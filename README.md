@@ -1,10 +1,10 @@
-# Change data capture with embedded debezium ,mysql and springboot
+# Change data capture with debezium , kafka ,mysql and springboot
 
 Implementing data replications with cdc design patter via an embedded debezium server that sits on top on kafka (event streaming platerfom) and create events to
 
 listen to our app-db (mysql database) changes (delete,update and adding operations) at row-level using transactional logs and replicate it in our cdc-db (mysql database )
-
-## 1.Configuring the embedded debezium 
+# 1.Using embedded debezium with springboot and mysql 
+## Configuring the embedded debezium 
 
 ### adding the embedded server to our app
 
@@ -95,7 +95,7 @@ private void handleChangeEvent(RecordChangeEvent<SourceRecord> sourceRecordRecor
 }
 ```
 
-### debezium  with kafka connect 
+# 2.Using debezium with kafka and mysql 
 Unlike debezium embedded ,debezium with Kafka (Connect) offer more gain in the level of fault-tolerance and scalability.
 You can use different images of kafka :  bitmani(smaller container) ,confulentinc( easier integration for multiple technologies) or redpanda (faster)  depending on your needs .
 Also you can integrate kafdrop as ui to browser topics ,consumer groups and  monitor a cluster.
