@@ -2,20 +2,19 @@ version: '3.9'
 name: redpanda-cdc-mysql
 volumes:
   redpanda: null
+  db:
 services:
   mysql:
-      image: mysql
-      hostname: mysql
-      container_name: mysql
-      ports:
-        - 3306:3306
-      environment:
-        - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_USER=user
-        - MYSQL_PASSWORD=root
-      volumes:
-        - ./data/mysql.cnf:/etc/mysql/conf.d
-        - ./data/mysql_bootstrap.sql:/docker-entrypoint-initdb.d/mysql_bootstrap.sql
+    image: mysql
+    hostname: mysql
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD : root
+      MYSQL_DATABASE: customerdb
+    volumes:
+      - db:/var/lib/mysql
   redpanda:
     image: docker.redpanda.com/redpandadata/redpanda
     container_name: redpanda
@@ -54,3 +53,4 @@ services:
     depends_on: [mysql, redpanda]
     ports:
       - 8083:8083
+ 

@@ -16,7 +16,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
   zookeeper:
     image: confluentinc/cp-zookeeper
     hostname: zookeeper
@@ -111,4 +110,5 @@ services:
       - 9000:9000
     depends_on:
       - kafka
+
 
