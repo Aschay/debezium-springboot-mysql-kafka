@@ -99,7 +99,7 @@ private void handleChangeEvent(RecordChangeEvent<SourceRecord> sourceRecordRecor
 Unlike debezium embedded ,debezium with Kafka (Connect) offer more gain in the level of fault-tolerance and scalability.
 You can use different images of kafka :  bitmani(smaller container) ,confulentinc( easier integration for multiple technologies) or redpanda (faster)  depending on your needs .
 Also you can integrate kafdrop as ui to browser topics ,consumer groups and  monitor a cluster.
-The configuration are [here](https://github.com/Aschay/springboot-debezium/tree/main/debeziumEmbedded)
+The configurations are [here](https://github.com/Aschay/springboot-debezium/tree/main/debeziumKafka)
 
 
 
