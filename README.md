@@ -1,9 +1,14 @@
 # Change data capture with debezium , kafka ,mysql and springboot
+Change Data Capture (CDC) is design pattern used  for tracking changes made to the data in a database.
 
-Implementing data replications with cdc design patter via an embedded debezium server that sits on top on kafka (event streaming platerfom) and create events to
+It can be use to for real Time Analytics, Synchronizing data across geographically distributed systems, Fraud Prevention .
 
-listen to our app-db (mysql database) changes (delete,update and adding operations) at row-level using transactional logs and replicate it in our cdc-db (mysql database )
+In this demo It used track any modifications in the database  **real-time** which more efficient than doing regular database scans.
+
+Replication of data in another database in example (1) and events browsed easily in web ui example (2) .
 # 1.Using embedded debezium with springboot and mysql 
+Implementing data replications with cdc design patter via an embedded debezium server that sits on top on kafka (event streaming plateform) and create events to
+listen to our app-db (mysql database) changes (delete,update and adding operations) at row-level using transactional logs and replicate it in our cdc-db (mysql database )
 ## Configuring the embedded debezium 
 
 ### adding the embedded server to our app
